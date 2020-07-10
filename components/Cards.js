@@ -26,8 +26,30 @@
 
  axios.get(articleData)
  .then( (response) => {
-     console.log('OH YEAH')
+     console.log(response)
  })
  .catch( (error) => {
      console.log(error.dir)
  })
+
+ function cardMaker (articleDataObj) {
+    const card = document.createElement('div');
+    const headline = document.createElement('div')
+    const author = document.createElement('div');
+    const imgDiv = document.createElement('div');
+    const img = document.createElement('img');
+    const bySpan = document.createElement('span');
+
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgDiv.classList.add('img-container');
+
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imgDiv);
+    author.appendChild(bySpan)
+    imgDiv.appendChild(img)
+
+    return card;
+ }
