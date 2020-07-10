@@ -13,4 +13,26 @@
 
 let headerContainer = document.querySelector('.header-container');
 
-function Header() {}
+function Header() {
+    let headerDiv = document.createElement('div');
+    let date = document.createElement('span');
+    let title = document.createElement('h1');
+    let temp = document.createElement('span');
+
+    headerDiv.classList.add('header');
+    date.classList.add('date');
+    temp.classList.add('temp')
+
+    date.textContent = 'March 28, 2020';
+    title.textContent = 'Lambda Times';
+    temp.textContent = '98°';
+
+    headerContainer.appendChild(headerDiv);
+    headerDiv.appendChild(date);
+    headerDiv.appendChild(title);
+    headerDiv.appendChild(temp);
+
+    return headerDiv
+}
+
+Header();
