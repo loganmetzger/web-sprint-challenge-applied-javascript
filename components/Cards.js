@@ -26,10 +26,18 @@
 
  axios.get(articleData)
  .then( (response) => {
-     console.log(response)
+     console.log(response.data.articles)
+     console.log(Object.values(response.data.articles))
+    Object.values(response.data.articles).forEach(category => {
+        category.forEach(story => {
+            const article = cardMaker(story);
+            cardsContainer.appendChild(article);
+            console.log(cardsContainer)
+        })
+    });
  })
  .catch( (error) => {
-     console.log(error.dir)
+     console.dir(error)
  })
 
  function cardMaker (articleDataObj) {
@@ -45,11 +53,20 @@
     author.classList.add('author');
     imgDiv.classList.add('img-container');
 
+    // Creat Text Content
+    headline.textContent = articleDataObj.headline;
+    author.textContent = articleDataObj.authorName;
+    img.src = articleDataObj.authorPhoto;
+
     card.appendChild(headline);
+    imgDiv.appendChild(img);
     card.appendChild(author);
     author.appendChild(imgDiv);
-    author.appendChild(bySpan)
-    imgDiv.appendChild(img)
+    author.appendChild(bySpan);
+
+    card.addEventListener('click', e => {
+        console.log(headline);
+    })
 
     return card;
  }
