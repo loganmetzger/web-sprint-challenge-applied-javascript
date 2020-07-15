@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+Document Object Model. This is where the browser displays all the information and data being fed to it. It's basically a representation of the HTML elements on the page built in a treelike structure
+
 2. What is an event?
+
+Events are any interactions that the browser records. This could be clicking with the mouse, typing on the keyboard, scrolling, etc. The brower listens for these all the time, and anything you do inside the browser is tracked
 
 3. What is an event listener?
 
+Event listeners wait for a specific event to happen on a specific HTML element, and then execute a callback function of your choice that will be run when the event happens. Most commonly you might see a click event that will alter the HTML (using your JS callback function). For examply, you could click a button that opens or closes a menu.
+
 4. Why would we convert a NodeList into an Array?
 
+Node lists are array-like-objects, which means that we cannot use all our Array methods on them. forEach can be used on ode lists, but things like map, reduce, or filter aren't able to work unless we convert it fully into an array
+
 5. What is a component?
+
+A component is resuable block of code that performs a single task. Usually it consists of the trifecta (HTML, CSS, and JS) and as DRY as possible. The component will be used to create various unique things on a webpage that all fit the same basic design formula. For instance making cards for articles: Each article is unique in a number of ways, but the display characterists for each one are the same.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
